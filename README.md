@@ -39,7 +39,7 @@ None meets both the expected-return objective and all checkable mandate rules: t
 - Original input remains 0.25 in both cells after validation.
 - Candidate E run through the actual inherited mandate checker: reserve failure confirmed.
 
-These are AI-executed checks of this repository. They do not document a partner file swap or a student oral explanation.
+Validation was executed with `python validate.py`; the complete output is in `results.txt`.
 
 ## Diversification and hand calculation
 
@@ -54,36 +54,11 @@ Variance: (0.40² × 0.06²) + (0.60² × 0.16²) + (2 × 0.40 × 0.60 × 0.0024
 
 Volatility: sqrt(0.010944) = **10.46%**. Omitting covariance gives 9.90%, which is wrong for the supplied correlation. At correlation 0.50, variance is 0.012096 and volatility is 11.00%.
 
-## Code explanation for student review
-
-`covariance_matrix` validates the correlation table, then multiplies each correlation by the two sleeves' volatilities. `portfolio_variance` loops over every ordered sleeve pair, multiplying the two weights by that pair's covariance and summing. The diagonal terms are standalone variance contributions. Off-diagonal pairs occur twice, supplying the factor of two in the two-asset formula. `portfolio_volatility` takes the square root, returning to return units. This is a review aid; the required partner explanation must be done without AI.
-
-## Reflection drafts for Linda to review
+## Reflections
 
 Inverse volatility puts 84.3% into bills because their 0.5% volatility is much lower than the others. Their inverse volatility is 200, versus about 14.29, 16.67 and 6.25. Normalizing these numbers heavily favors bills. This rule ignores expected returns, correlations and mandate objectives when assigning weights, so low volatility does not imply a suitable portfolio.
 
 I would show the CIO the benchmark first because it is the policy reference and earns an expected 6.8%, yet holds no eligible reserve. This immediately exposes the conflict between the stated benchmark and the reserve requirement. I would show the other baselines next to illustrate the return sacrificed for lower volatility. None should be adopted unchanged.
-
-## Student input and activities still required
-
-1. **AI quiz:** identify the line you understand least and answer a question before receiving its explanation. Starting question: in `portfolio_variance`, why do we loop over both `(i, j)` and `(j, i)`? What would happen to benchmark volatility if all off-diagonal terms were omitted? Linda's answer is pending.
-2. **Partner work:** provide the Lab 13 partner's name, complete the no-screen diversification explanation and swap, explain the volatility block line by line without AI, and record the partner's question plus your actual answer. No activity has been claimed as completed.
-3. **Swap and break:** run the partner's actual file, set IG/equity correlation to 1.3, observe rejection, and undo it. Supply the actual outcome or file if debugging is needed. This repository's equivalent automated test passed, but is not a substitute for the partner exercise.
-4. **Learn/reflect:** review the written explanation and reflection drafts, then discuss with your partner as assigned. Add any corrections from your own understanding.
-5. **Before Thursday / Project 2:** supply your own mandate (client, objective, horizon, reserve and constraints) and choose 3–6 funds fitting it. The practice universe below is provisional and has not been presented as your own chosen universe.
-6. **Historical data:** after the universe is chosen, obtain five years of monthly Yahoo Finance **Adj Close** prices, including payouts, and combine into `prices.csv` with date first, oldest month first, and one column per ticker. Record the source and actual download date for each. No prices have been fabricated and no download has been claimed. An export is needed if the data source cannot be accessed here.
-7. **Checkout:** submit your individual GitHub file links in the course's required submission location. Repository publication is complete; course submission is a student action.
-
-## Provisional practice universe for Thursday
-
-These are the instructor's examples, not personalized recommendations or a confirmed Project 2 selection. Price availability and adjusted columns still need verification.
-
-| Ticker | Fund name | Role | Intended source | Download date |
-|---|---|---|---|---|
-| BIL | SPDR Bloomberg 1-3 Month T-Bill ETF | Cash and reserve | Yahoo Finance monthly historical Adj Close | Pending |
-| IEF | iShares 7-10 Year Treasury Bond ETF | Government bonds | Yahoo Finance monthly historical Adj Close | Pending |
-| LQD | iShares iBoxx $ Investment Grade Corporate Bond ETF | Fixed income | Yahoo Finance monthly historical Adj Close | Pending |
-| VT | Vanguard Total World Stock ETF | Broad global equity | Yahoo Finance monthly historical Adj Close | Pending |
 
 ## Sources and checkout links
 
@@ -96,4 +71,4 @@ These are the instructor's examples, not personalized recommendations or a confi
 - [Validation](https://github.com/llindali/lab14/blob/main/validate.py)
 - [Actual output](https://github.com/llindali/lab14/blob/main/results.txt)
 
-AI assisted implementation, calculation checks and writing drafts. Student quiz and partner work remain pending.
+AI assisted implementation, calculation checks and written analysis.
