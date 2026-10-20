@@ -1,0 +1,66 @@
+Course training inputs; annual estimates, not market forecasts.
+Order: bills / 10-year / IG bonds / equity
+Objective: 6.50% (CPI estimate 2.5% + 4%)
+
+Benchmark: 0.0 / 0.0 / 40.0 / 60.0
+Return: 6.80%; volatility: 10.46%; reserve-eligible: 0.0%; meets objective: yes
+
+Equal weight: 25.0 / 25.0 / 25.0 / 25.0
+Return: 5.20%; volatility: 5.21%; reserve-eligible: 50.0%; meets objective: no
+
+Inverse volatility: 84.3 / 6.0 / 7.0 / 2.6
+Return: 3.77%; volatility: 1.05%; reserve-eligible: 90.3%; meets objective: no
+Reserve minimum: 3.0%
+
+Candidate A
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 14.0 pass
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 0.0 pass
+Calendar-year loss: requires CIO clarification
+passes every checkable rule
+
+Candidate B
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 1.0 FAIL
+Redeemable in 5 days >= 90.0%: 85.0 FAIL
+Largest single company <= 8.0%: 9.0 FAIL
+Calendar-year loss: requires CIO clarification
+fails 3 rule(s)
+
+Candidate C
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 2.0 FAIL
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 8.0 pass
+Calendar-year loss: requires CIO clarification
+fails 1 rule(s)
+
+Candidate D
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 100.0 pass
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 0.0 pass
+Calendar-year loss: requires CIO clarification
+passes every checkable rule
+
+Candidate E
+Weights sum to 100: 100.0 pass
+Long-only (lowest weight): 0.0 pass
+Reserve >= 3.0%: 0.0 FAIL
+Redeemable in 5 days >= 90.0%: 100.0 pass
+Largest single company <= 8.0%: 0.0 pass
+Calendar-year loss: requires CIO clarification
+fails 1 rule(s)
+PASS Benchmark: ('6.80%', '10.46%', '0.0%')
+PASS Equal weight: ('5.20%', '5.21%', '50.0%')
+PASS Inverse volatility: ('3.77%', '1.05%', '90.3%')
+PASS correlation 0.50: benchmark volatility 11.00%
+PASS out-of-range rejected: Every correlation must be finite and between -1 and 1.
+PASS asymmetric rejected: Correlation table must be symmetric.
+PASS candidate E: reserve 0.0%, fails the 3.0% reserve rule
+PASS original correlations restored at 0.25
